@@ -21,7 +21,7 @@ const runPull = async argv => {
   const basedir = argv.out || process.cwd()
   while (start <= end) {
     console.log('pull', new Date(start))
-    const results = await filter(argv.org, start)
+    const results = await filter(argv.org, start, argv.local)
     const filename = path.join(basedir, filepath(start))
     mkdirp.sync(path.dirname(filename))
     const buffer = Buffer.from(JSON.stringify(results))
@@ -34,6 +34,10 @@ const runPull = async argv => {
 const options = yargs => {
   yargs.option('out', {
     desc: 'Base directory for data output'
+  })
+  yargs.option('local', {
+    desc: 'Local directory containing minimized gharchive data.',
+    default: false
   })
 }
 
