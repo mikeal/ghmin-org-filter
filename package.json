@@ -1,0 +1,24 @@
+{
+  "name": "ghmin-org-filter",
+  "version": "0.0.0",
+  "description": "Filter data for a single org out of minimized gharchive data.",
+  "main": "index.js",
+  "bin": {
+    "ghmin-org-filter": "./cli.js"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "keywords": [],
+  "author": "Mikeal Rogers <mikeal.rogers@gmail.com> (https://www.mikealrogers.com/)",
+  "license": "(Apache-2.0 AND MIT)",
+  "dependencies": {
+    "brotli-max": "^0.1.1",
+    "mkdirp": "^0.5.1",
+    "pull-gharchive-minimized": "^1.0.1",
+    "yargs": "^14.0.0"
+  },
+  "devDependencies": {
+    "standard": "^14.3.1"
+  }
+}
