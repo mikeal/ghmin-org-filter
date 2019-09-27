@@ -1,6 +1,6 @@
 {
   "name": "ghmin-org-filter",
-  "version": "0.0.0",
+  "version": "0.0.0-dev",
   "description": "Filter data for a single org out of minimized gharchive data.",
   "main": "index.js",
   "bin": {
@@ -20,5 +20,13 @@
   },
   "devDependencies": {
     "standard": "^14.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeal/ghmin-org-filter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mikeal/ghmin-org-filter/issues"
+  },
+  "homepage": "https://github.com/mikeal/ghmin-org-filter#readme"
 }
