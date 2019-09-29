@@ -21,11 +21,17 @@ const runPull = async argv => {
   const basedir = argv.out || process.cwd()
   while (start <= end) {
     console.log('pull', new Date(start))
-    const results = await filter(argv.org, start, argv.local)
+    let results
+    try {
+      results = await filter(argv.org, start, argv.local)
+    } catch (e) {
+      console.error('skipping, not found')
+      start += oneday
+      continue
+    }
     const filename = path.join(basedir, filepath(start))
     mkdirp.sync(path.dirname(filename))
     const buffer = Buffer.from(JSON.stringify(results))
-    console.log('save', buffer.length, filename)
     await brotli(buffer, filename)
     start += oneday
   }
