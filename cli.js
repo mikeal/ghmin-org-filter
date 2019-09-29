@@ -25,6 +25,7 @@ const runPull = async argv => {
     try {
       results = await filter(argv.org, start, argv.local)
     } catch (e) {
+      console.log(e.message)
       console.error('skipping, not found')
       start += oneday
       continue
